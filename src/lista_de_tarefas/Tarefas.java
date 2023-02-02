@@ -20,11 +20,11 @@ public class Tarefas {
 	public void listarTarefas(){
 		int cont = 1;
 		for (int i = 0; i < listaTarefas.size(); i++) {
-				System.out.println(cont + " - " +listaTarefas.get(i));
-			
+			System.out.println(cont + " - " +listaTarefas.get(i));
 			cont +=1;
 		} 
 	}
+	
 	public void modificarTarefas(){
 		int posTarefa;
 		String novaTarefa;
@@ -36,9 +36,15 @@ public class Tarefas {
 		listaTarefas.add(posTarefa - 1, novaTarefa);
 		listaTarefas.remove(posTarefa);
 	}
-	
-	
 
+	public void excluirTarefas(){
+		int posTarefa;
+		System.out.println("Digite o número da tarefa que deseja excluir");
+		posTarefa = scanner.nextInt();
+		listaTarefas.remove(posTarefa-1);
+	} 
+	
+	
 	public String getTarefa() {
 		return tarefa;
 	}

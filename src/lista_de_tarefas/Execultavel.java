@@ -32,6 +32,8 @@ public class Execultavel {
 					tarefas.listarTarefas();
 				}else if (opTarefa == 3) {
 					tarefas.modificarTarefas();
+				}else if (opTarefa == 4) {
+					tarefas.excluirTarefas();
 				}
 			
 			}while(opTarefa != 0);
