@@ -1,19 +1,16 @@
 package lista_de_tarefas;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Execultavel {
+	
 	public static void main(String [] args) {
+		
+		// Declaração de variáveis
+		int opTarefa;
 			
-			// Declaração de variáveis
-			int opTarefa;
-			String adTarefa;
-			
-			// Instanciando Classe Tarefas, Scanner 
-			Tarefas tarefas = new Tarefas();	
-			Scanner scanner = new Scanner(System.in);
+		// Instanciando Classe Tarefas, Scanner 
+		Tarefas tarefas = new Tarefas();	
+		Scanner scanner = new Scanner (System.in);
 			
 			do {
 				// Apresentando opções aos usuários 
@@ -33,6 +30,8 @@ public class Execultavel {
 					tarefas.adicionarTarefas();
 				}else if (opTarefa == 2) {
 					tarefas.listarTarefas();
+				}else if (opTarefa == 3) {
+					tarefas.modificarTarefas();
 				}
 			
 			}while(opTarefa != 0);

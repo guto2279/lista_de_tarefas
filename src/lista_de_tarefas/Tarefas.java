@@ -1,6 +1,5 @@
 package lista_de_tarefas;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,38 +12,29 @@ public class Tarefas {
 	Scanner scanner = new Scanner (System.in);
 	
 	public void adicionarTarefas(){
-		System.out.println("Qual tarefa deseja adicionar? ");
-		tarefa = scanner.nextLine();
+		System.out.print("Qual tarefa deseja adicionar? ");
+		tarefa = scanner.next();
 		listaTarefas.add(tarefa);
 	}
 	
 	public void listarTarefas(){
-		int i=0;
 		int cont = 1;
-		int f = listaTarefas.size();
-		do {
-			i++;
-			for (String tarefas: listaTarefas) {
-				System.out.println(cont + " " +tarefas);
-			}
+		for (int i = 0; i < listaTarefas.size(); i++) {
+				System.out.println(cont + " - " +listaTarefas.get(i));
+			
 			cont +=1;
-			
-		} while (i < f);	
-		}
-
-	
-			
-
-	
+		} 
+	}
 	public void modificarTarefas(){
 		int posTarefa;
 		String novaTarefa;
 		
-		System.out.println("Digite a posição da tarefa que deseja modificar: ");
+		System.out.print("Digite a posição da tarefa que deseja modificar: ");
 		posTarefa = scanner.nextInt();
-		System.out.println("Digite a nova tarefa: ");
-		novaTarefa = scanner.nextLine();
-		getListaTarefas().add(posTarefa - 1, novaTarefa);
+		System.out.print("Digite a nova tarefa: ");
+		novaTarefa = scanner.next();
+		listaTarefas.add(posTarefa - 1, novaTarefa);
+		listaTarefas.remove(posTarefa);
 	}
 	
 	
@@ -64,6 +54,5 @@ public class Tarefas {
 	public void setListaTarefas(List<String> listaTarefas) {
 		this.listaTarefas = listaTarefas;
 	}
-	
-	
+		
 }
